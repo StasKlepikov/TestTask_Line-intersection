@@ -1,10 +1,10 @@
 import express from 'express';
 import path from 'path';
-import * as dotenv from 'dotenv';
-
-dotenv.config();
 
 const app = express();
+const port = process.env.PORT || 3000;
+const cwd = process.cwd();
+const staticFolder = path.join(cwd, 'public');
 
-app.use('/', express.static(path.join(process.cwd(), 'public')));
-app.listen(process.env.PORT || 3000);
+app.use('/', express.static(staticFolder));
+app.listen(port, () => console.log(`Server is running on: http://localhost:${port}`));
