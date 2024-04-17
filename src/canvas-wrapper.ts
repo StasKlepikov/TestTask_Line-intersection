@@ -63,8 +63,11 @@ export default class CanvasWraper {
   }
   
   clear(canvasWraper: CanvasWraper) {
+    const enableBtn = () => this.clearButton.disabled = false;
+
     return () => {
-      canvasWraper.painter.collapse(canvasWraper.canvasWidth, canvasWraper.canvasHeight);
+      this.clearButton.disabled = true;
+      canvasWraper.painter.collapse(canvasWraper.canvasWidth, canvasWraper.canvasHeight, enableBtn);
     }
   }
 

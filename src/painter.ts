@@ -104,7 +104,7 @@ export default class Painter {
     );
   }
 
-  collapse(canvasWidth: number, canvasHeight: number) {
+  collapse(canvasWidth: number, canvasHeight: number, onFinish?: () => unknown) {
     const reductionVectors: ({
       line: Line,
       reductionVector: Point,
@@ -127,7 +127,10 @@ export default class Painter {
     }
     
     const interval: NodeJS.Timer = setInterval(() => {
-      if  (this.existingLines.length == 0) {
+      if (!this.existingLines.length) {
+        if (typeof onFinish === 'function') { 
+          onFinish();
+        }
         return clearInterval(interval);
       }
 

@@ -35,4 +35,8 @@ body {
 .wrapper #btn-clear:hover {
   color: #fff;
   box-shadow: 0 0 40px 40px #2a303c inset;
-}/*# sourceMappingURL=main.css.map */
+}
+.wrapper #btn-clear:disabled {
+  border: 2px solid #797a7c;
+  color: #797a7c;
+}
