@@ -4,8 +4,8 @@ export default class CanvasWraper {
   bounds;
   painter;
   hasLoaded = true;
-  canvasWidth = 1400;
-  canvasHeight = 650;
+  canvasWidth = 1250;
+  canvasHeight = 520;
 
   constructor(
     private readonly canvas: HTMLCanvasElement,

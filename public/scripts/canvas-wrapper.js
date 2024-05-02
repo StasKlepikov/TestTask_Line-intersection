@@ -4,8 +4,8 @@ export default class CanvasWraper {
         this.canvas = canvas;
         this.clearButton = clearButton;
         this.hasLoaded = true;
-        this.canvasWidth = 1400;
-        this.canvasHeight = 650;
+        this.canvasWidth = 1250;
+        this.canvasHeight = 520;
         const ctx = this.canvas.getContext('2d');
         if (!ctx) {
             throw new Error('2d context is missing');
